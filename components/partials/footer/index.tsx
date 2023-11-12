@@ -4,7 +4,7 @@ import logo from "@/public/logoWhite.svg"
 const Footer = () => {
     return (
         <>
-            <div className="bg-navy w-full mx-auto max-w-screen-2xl bottom-0 right-0 left-0 fixed">
+            <div className="bg-navy w-full mx-auto max-w-screen-2xl bottom-0 right-0 left-0 ">
                 <div className="flex flex-col py-10 px-16">
                     <div className="mb-5">
                         <Image src={logo} alt="logo" />
