@@ -9,11 +9,13 @@ import axios from 'axios'
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
 import { BsFillPeopleFill } from 'react-icons/bs'
+import Swal from 'sweetalert2'
 
 export default function Home() {
   const [open, setOpen] = useState<boolean>(false)
-  const [room, setRoom] = useState('gdsc')
+  const [room, setRoom] = useState('')
   const [data, setData] = useState<any>()
+  const [call, setCall] = useState<boolean>(false)
 
   const getDatas = async () => {
     await axios.post('/api/publish', {
@@ -21,7 +23,16 @@ export default function Home() {
       room: `bts/${room}`
     })
     .then(response => {
-      setData(response.data)
+      console.log(response.data)
+      if (response.data.code == 200) {
+        setData(response.data)
+        Swal.fire({
+          title: 'Berhasil',
+          text: `Berhasil ${response.data.data.type === 'LOCK' ? 'menutup' : 'membuka'} pintu`,
+          icon: 'success',
+          confirmButtonText: 'Tutup'
+        })
+      }
     })
     .catch(error => {
       return error
@@ -29,8 +40,11 @@ export default function Home() {
   }
 
   useEffect(() => {
-    getDatas()
-  }, [room, open])
+    if (call == true) {
+      getDatas()
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [room, open, call])
   
 
   return (
@@ -43,7 +57,7 @@ export default function Home() {
             <div className='w-full flex gap-10 h-full justify-between flex-col'>
 
               {/* LINE 1 RIGHT */}
-              <LineOne open={open} setOpen={setOpen} setRoom={setRoom} />
+              <LineOne open={open} call={call} setCall={setCall} setOpen={setOpen} setRoom={setRoom} />
 
               {/* LINE 2 RIGHT */}
               <LineTwo />

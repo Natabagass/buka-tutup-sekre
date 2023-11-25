@@ -3,10 +3,12 @@ import { BsFillPeopleFill } from "react-icons/bs";
 interface Props {
     setRoom: React.Dispatch<SetStateAction<string>>,
     setOpen: React.Dispatch<SetStateAction<boolean>>,
-    open: boolean
+    setCall: React.Dispatch<SetStateAction<boolean>>,
+    open: boolean,
+    call: boolean
 }
 
-const LineOne = ({ setRoom, setOpen, open }: Props) => {
+const LineOne = ({ setRoom, setOpen, open, call, setCall }: Props) => {
     return (
         <>
             <div className='flex flex-row w-full border-[#0B122A] border-2 border-t-0 border-r-0 rounded-bl-lg'>
@@ -30,6 +32,7 @@ const LineOne = ({ setRoom, setOpen, open }: Props) => {
                             <label className="relative inline-flex items-center cursor-pointer">
                                 <input 
                                     onClick={() => {
+                                        setCall(true)
                                         setOpen(!open)
                                         setRoom('gdsc')
                                     }} 
