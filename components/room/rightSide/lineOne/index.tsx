@@ -1,6 +1,12 @@
+import { SetStateAction } from "react";
 import { BsFillPeopleFill } from "react-icons/bs";
+interface Props {
+    setRoom: React.Dispatch<SetStateAction<string>>,
+    setOpen: React.Dispatch<SetStateAction<boolean>>,
+    open: boolean
+}
 
-const LineOne = () => {
+const LineOne = ({ setRoom, setOpen, open }: Props) => {
     return (
         <>
             <div className='flex flex-row w-full border-[#0B122A] border-2 border-t-0 border-r-0 rounded-bl-lg'>
@@ -22,7 +28,14 @@ const LineOne = () => {
                         <div className='flex flex-row w-full justify-between items-center'>
                             <BsFillPeopleFill className="text-[#9AA3B2] text-3xl" />
                             <label className="relative inline-flex items-center cursor-pointer">
-                                <input type="checkbox" value="" className="sr-only peer items-center" />
+                                <input 
+                                    onClick={() => {
+                                        setOpen(!open)
+                                        setRoom('gdsc')
+                                    }} 
+                                    type="checkbox" 
+                                    value="" 
+                                    className="sr-only peer items-center" />
                                 <div className="w-11 h-6 bg-n100 peer-focus:outline-none peer-focus:ring-blue-300 rounded-full peer  peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-n400 after:border-n200 after:border after:rounded-full after:h-5 after:w-5 after:transition-all after:peer-checked:bg-white peer-checked:bg-green-400"></div>
                             </label>
                         </div>
