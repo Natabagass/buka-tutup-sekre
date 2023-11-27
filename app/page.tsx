@@ -6,9 +6,7 @@ import LineOne from '@/components/room/rightSide/lineOne'
 import LineThree from '@/components/room/rightSide/lineThree'
 import LineTwo from '@/components/room/rightSide/lineTwo'
 import axios from 'axios'
-import Image from 'next/image'
 import { useEffect, useState } from 'react'
-import { BsFillPeopleFill } from 'react-icons/bs'
 import Swal from 'sweetalert2'
 
 export default function Home() {
