@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   openGraph: {
     images: [
       {
-        url: 'https://btsfilkom.vercel.app/assets/static/brand/logo-brand-512.png',
+        url: 'https://btsfilkom.vercel.app/link-copas.svg',
         width: 512,
         height: 512,
       },
