@@ -20,7 +20,13 @@ export const metadata: Metadata = {
   authors: [{ name: 'Buka Tutup Sekre Team', url: 'https://btsfilkom.vercel.app/' }],
   metadataBase: new URL('https://btsfilkom.vercel.app/'),
   openGraph: {
-    images: '/link-copas.svg',
+    images: [
+      {
+        url: 'https://btsfilkom.vercel.app/assets/static/brand/logo-brand-512.png',
+        width: 512,
+        height: 512,
+      },
+    ],    
     title: 'Buka Tutup Sekre',
     description: 'Buka tutup sekre adalah sebuah kemudahan untuk membuka ruangan sekretariat',
     url: 'https://btsfilkom.vercel.app/',
