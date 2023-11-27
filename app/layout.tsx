@@ -17,8 +17,8 @@ export const metadata: Metadata = {
   icons: {
     icon: '/icon.svg'
   },
-  authors: [{ name: 'Buka Tutup Sekre Team', url: 'https://btsfilkom.vercel.app/' }],
-  metadataBase: new URL('https://btsfilkom.vercel.app/'),
+  authors: [{ name: 'Buka Tutup Sekre Team', url: 'https://btsfilkom.vercel.app' }],
+  metadataBase: new URL('https://btsfilkom.vercel.app'),
   openGraph: {
     images: [
       {
@@ -29,8 +29,11 @@ export const metadata: Metadata = {
     ],    
     title: 'Buka Tutup Sekre',
     description: 'Buka tutup sekre adalah sebuah kemudahan untuk membuka ruangan sekretariat',
-    url: 'https://btsfilkom.vercel.app/',
+    url: 'https://btsfilkom.vercel.app',
     siteName: 'Buka Tutup Sekre',
+    locale: 'en_ID',
+    type: 'website',
+    countryName: 'Indonesia',
   },
   keywords: ['Buka Tutup Sekre', 'IOT', 'MQTT', 'FILKOM', 'UB'],
 }

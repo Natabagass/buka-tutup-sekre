@@ -46,7 +46,7 @@ export default function Home() {
   
 
   return (
-    <div className='px-16 mt-36 mb-16 mx-auto max-w-screen-2xl'>
+    <div className='px-16 mt-36 flex items-center w-full justify-center min-h-screen max-w-screen-2xl h-full'>
       <div className='border-4 border-[#0B122A] rounded-xl'>
         <div className='flex flex-row w-full h-[550px] justify-between gap-24'>
           <LeftSide />
@@ -62,7 +62,7 @@ export default function Home() {
 
             </div>
 
-            <div className='w-full flex gap-10 flex-col'>
+            <div className='w-full flex h-full gap-10 flex-col'>
 
               {/* LINE 3 RIGHT */}
               <LineThree />
